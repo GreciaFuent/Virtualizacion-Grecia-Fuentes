@@ -1,6 +1,6 @@
-# Assessment 01 
+# Assessment 01 (Group 4)
 
-### Mayda Daniela Matul Alvarado - 
+### Mayda Daniela Matul Alvarado - 1535523
 ### Grecia Fernanda Fuentes Hernández - 1537723
 
 ## ZeroTier Configuration
