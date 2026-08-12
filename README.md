@@ -3,6 +3,9 @@
 ### Mayda Daniela Matul Alvarado - 1535523
 ### Grecia Fernanda Fuentes Hernández - 1537723
 
+### LInk of the video
+https://photos.app.goo.gl/jkjVUqAMLqWqWovM7
+
 ## ZeroTier Configuration
 
 A new ZeroTier network was created with the name `assessment-01`.
