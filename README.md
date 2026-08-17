@@ -67,8 +67,6 @@ The assigned address was:
 
 Ping requests to Google
 
-```bash
-ping -c 4 google.com
-```
+There is no Internet access because the VM was assigned the IP 192.168.2.200/24, which is outside the local subnet 192.168.1.0/24. Therefore, the VM cannot correctly reach the gateway 192.168.1.1, causing the ping to google.com to fail.
 
 ![IP Outside and Ping](./utils/image9.png)
