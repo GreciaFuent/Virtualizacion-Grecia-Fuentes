@@ -1,15 +1,15 @@
 # Virtualizacion-Grecia-Fuentes
 
-## HW-05 - Configuración de servicio Nginx en Kubernetes
+## HW-05 - Nginx Service Configuration in Kubernetes
 
-### 1. Nginx funcionando en el navegador
+### 1. Nginx Running in the Browser
 
-![Nginx funcionando](./utils/image1.png)
+![Nginx Running](./utils/image1.png)
 
-### 2. URL del servicio Nginx
+### 2. Nginx Service URL
 
 ![Minikube Service](./utils/image2.png)
 
-### 3. Servicio configurado en Kubernetes
+### 3. Kubernetes Service Configuration
 
 ![Kubectl Get SVC](./utils/image3.png)
