@@ -1,10 +1,4 @@
-
-
-## Overview
-
-This project implements a local Kubernetes environment using Minikube, MetalLB, and Traefik to expose four web applications through local DNS names.
-
-![Architecture Diagram](utils/image1.png)
+## Assessment 02 Grecia Fuentes - 1537723
 
 ---
 
