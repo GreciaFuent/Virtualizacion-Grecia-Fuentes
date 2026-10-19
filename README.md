@@ -4,15 +4,15 @@
 
 Traefik was installed using Helm to expose Argo CD through an Ingress resource.
 
-![Traefik Installation](./utils/image1.png)
+![Traefik Services and Ingress Controller](./utils/image3.png)
 
 ---
 
 ## Argo CD Ingress Configuration
 
-The Ingress resource uses the hostname `argocd.local` and routes HTTP traffic to the Argo CD server through Traefik.
+The Ingress resource uses the hostname `argocd.local` to route HTTP traffic to the Argo CD server through Traefik.
 
-![Argo CD Ingress](./utils/image2.png)
+![Argo CD Ingress Configuration](./utils/image5.png)
 
 ---
 
@@ -22,7 +22,7 @@ The Argo CD web interface was accessed through:
 
 `http://argocd.local:8080`
 
-![Argo CD Interface](./utils/image3.png)
+![Argo CD Web Interface](./utils/image4.png)
 
 ---
 
@@ -35,7 +35,7 @@ The first Argo CD Application deploys an Nginx container using the manifests sto
 - **Namespace:** `parcial-gffh`
 - **Service Port:** `80`
 
-![Nginx Application](./utils/image4.png)
+![Nginx Application](./utils/image7.png)
 
 ---
 
@@ -48,25 +48,35 @@ The second Argo CD Application deploys an Apache HTTP Server container using the
 - **Namespace:** `parcial-gffh`
 - **Service Port:** `80`
 
-![Apache Application](./utils/image5.png)
+![Apache Application](./utils/image8.png)
 
 ---
 
 ## Synchronization and Health Status
 
-Both applications were synchronized with the GitHub repository and reached the `Healthy` status in Argo CD.
+Both applications synchronized with the GitHub repository and reached `Synced` and `Healthy` status in Argo CD.
 
 - `app1-nginx`: **Synced / Healthy**
 - `app2-apache`: **Synced / Healthy**
 
-![Argo CD Applications Synced and Healthy](./utils/image8.png)
+![Argo CD Applications Synced and Healthy](./utils/image9.png)
 
 ---
 
 ## Kubernetes Resources Verification
 
-The Kubernetes pods and services were verified in the `parcial-gffh` namespace. Both application pods reached the `Running` state and were ready.
+The Kubernetes pods and services were verified in the cluster.
 
-![Kubernetes Resources](./utils/image9.png)
+![Kubernetes Resources](./utils/image1.png)
+
+![Kubernetes Pods](./utils/image2.png)
+
+---
+
+## GitOps Change Verification
+
+The Nginx replicas were increased from 1 to 2 through Argo CD. Both applications remained `Synced` and `Healthy`.
+
+![GitOps Change Verification](./utils/image10.png)
 
 ---
