@@ -4,7 +4,7 @@ metadata:
   name: app1-nginx
   namespace: parcial-gffh
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: app1-nginx
