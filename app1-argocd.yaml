@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app1-nginx
+  namespace: argocd-gffh
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:GreciaFuent/Virtualizacion-Grecia-Fuentes.git
+    targetRevision: HEAD
+    path: apps/app1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: parcial-gffh
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
