@@ -30,7 +30,7 @@ The configured data sources are:
 - **Prometheus:** `http://prometheus-server.monitoring-gf.svc.cluster.local`
 - **Loki:** `http://loki.monitoring-gf.svc.cluster.local:3100`
 
-Prometheus is the default data source for metrics, while Loki is used to query centralized container logs.
+
 
 ![Grafana Data Sources](./utils/image4.png)
 
@@ -63,16 +63,6 @@ Dashboard file:
 `grafana/dashboards/kubernetes-apps.json`
 
 ---
-
-## 5. Centralized Logs with Loki and Promtail
-
-Loki was installed to store and query container logs. Promtail runs as a DaemonSet and collects container logs from the Kubernetes nodes before sending them to Loki.
-
-The Loki push endpoint is:
-
-`http://loki.monitoring-gf.svc.cluster.local:3100/loki/api/v1/push`
-
-Promtail collects logs from the application namespace `parcial-gffh` and from Traefik.
 
 ### 5.1. Query Logs from the Application Namespace
 
