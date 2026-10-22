@@ -1,0 +1,20 @@
+
+alertmanager:
+  enabled: false
+
+pushgateway:
+  enabled: false
+
+server:
+  persistentVolume:
+    enabled: false
+  service:
+    type: ClusterIP
+  global:
+    scrape_interval: 15s
+
+kube-state-metrics:
+  enabled: true
+
+prometheus-node-exporter:
+  enabled: true

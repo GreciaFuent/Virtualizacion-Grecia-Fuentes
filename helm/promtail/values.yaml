@@ -1,0 +1,54 @@
+
+config:
+  clients:
+    - url: http://loki.monitoring-gf.svc.cluster.local:3100/loki/api/v1/push
+
+  snippets:
+    pipelineStages:
+      - cri: {}
+
+  scrapeConfigs: |
+    - job_name: kubernetes-pods
+      kubernetes_sd_configs:
+        - role: pod
+      pipeline_stages:
+        - cri: {}
+      relabel_configs:
+        - source_labels:
+            - __meta_kubernetes_pod_node_name
+          target_label: __host__
+        - action: replace
+          source_labels:
+            - __meta_kubernetes_namespace
+          target_label: namespace
+        - action: replace
+          source_labels:
+            - __meta_kubernetes_pod_name
+          target_label: pod
+        - action: replace
+          source_labels:
+            - __meta_kubernetes_pod_container_name
+          target_label: container
+        - action: replace
+          source_labels:
+            - __meta_kubernetes_namespace
+            - __meta_kubernetes_pod_label_app
+          separator: /
+          target_label: job
+        - action: keep
+          source_labels:
+            - __meta_kubernetes_pod_node_name
+          regex: .+
+
+  positions:
+    filename: /run/promtail/positions.yaml
+
+tolerations:
+  - effect: NoSchedule
+    operator: Exists
+
+daemonset:
+  enabled: true
+
+serviceMonitor:
+  enabled: false
